@@ -45,7 +45,7 @@ public class ProductDal implements IProductDal {
 	@Override
 	public void update(Product product) {
 		Session session = entityManager.unwrap(Session.class);
-		Product productToDelete = session.get(Product.class, product.getId())
+		Product productToDelete = session.get(Product.class, product.getId());
 		session.delete(productToDelete);
 	}
 

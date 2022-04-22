@@ -25,4 +25,27 @@ public class ProductManager implements IProductService {
 		return productDal.getAll();
 	}
 
+	@Override
+	public void add(Product product) {
+		productDal.add(product);
+		
+	}
+
+	@Override
+	public void insert(Product product) {
+		productDal.insert(product);
+		
+	}
+
+	@Override
+	public void update(Product product) {
+		productDal.update(product);
+		
+	}
+
+	@Override
+	public Product getById(int id) {
+		return productDal.getById(id);
+	}
+
 }

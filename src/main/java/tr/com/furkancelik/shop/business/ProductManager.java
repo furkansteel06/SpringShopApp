@@ -22,7 +22,7 @@ public class ProductManager implements IProductService {
 	@Override
 	@Transactional
 	public List<Product> getAll() {
-		return this.productDal.getAll();
+		return productDal.getAll();
 	}
 
 }

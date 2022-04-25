@@ -1,23 +1,18 @@
 package tr.com.furkancelik.shop.business;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import lombok.AllArgsConstructor;
 import tr.com.furkancelik.shop.dal.IProductDal;
 import tr.com.furkancelik.shop.entities.Product;
 
 @Service
+@AllArgsConstructor
 public class ProductManager implements IProductService {
 
-	private IProductDal productDal;
-
-	@Autowired
-	public ProductManager(IProductDal productDal) {
-		this.productDal = productDal;
-	}
+	private final IProductDal productDal;
 
 	@Override
 	@Transactional

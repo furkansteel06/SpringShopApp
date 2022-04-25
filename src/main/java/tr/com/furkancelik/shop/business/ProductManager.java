@@ -26,24 +26,28 @@ public class ProductManager implements IProductService {
 	}
 
 	@Override
+	@Transactional
 	public void add(Product product) {
 		productDal.add(product);
-		
+
 	}
 
 	@Override
-	public void insert(Product product) {
-		productDal.insert(product);
-		
-	}
-
-	@Override
+	@Transactional
 	public void update(Product product) {
 		productDal.update(product);
-		
+
 	}
 
 	@Override
+	@Transactional
+	public void delete(Product product) {
+		productDal.delete(product);
+
+	}
+
+	@Override
+	@Transactional
 	public Product getById(int id) {
 		return productDal.getById(id);
 	}

@@ -21,12 +21,12 @@ public class ProductDal implements IProductDal {
 		this.entityManager = entityManager;
 	}
 
+	@Override
 	@Transactional
 	@Autowired
 	public List<Product> getAll() {
 		Session session = entityManager.unwrap(Session.class);
-		@SuppressWarnings("unchecked")
-		List<Product> products = session.createQuery("from Product").getResultList();
+		List<Product> products = session.createQuery("from Product", Product.class).getResultList();
 		return products;
 	}
 
@@ -37,13 +37,13 @@ public class ProductDal implements IProductDal {
 	}
 
 	@Override
-	public void insert(Product product) {
+	public void update(Product product) {
 		Session session = entityManager.unwrap(Session.class);
 		session.saveOrUpdate(product);
 	}
 
 	@Override
-	public void update(Product product) {
+	public void delete(Product product) {
 		Session session = entityManager.unwrap(Session.class);
 		Product productToDelete = session.get(Product.class, product.getId());
 		session.delete(productToDelete);

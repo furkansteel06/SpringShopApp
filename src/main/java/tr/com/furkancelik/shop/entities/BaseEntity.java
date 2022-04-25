@@ -13,7 +13,7 @@ import lombok.Data;
 public abstract class BaseEntity {
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
